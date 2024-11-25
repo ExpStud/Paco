@@ -6,7 +6,7 @@ interface Props {
   close: () => void;
 }
 
-const ImageModal: FC<Props> = (props: Props) => {
+const ContentModal: FC<Props> = (props: Props) => {
   const { show, close } = props;
 
   return (
@@ -16,4 +16,4 @@ const ImageModal: FC<Props> = (props: Props) => {
   );
 };
 
-export default ImageModal;
+export default ContentModal;

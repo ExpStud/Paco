@@ -4,7 +4,7 @@ import {
   Header,
   Footer,
   SplashScreen,
-  ImageModal,
+  ContentModal,
 } from "@components";
 import { enterAnimation } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
@@ -72,7 +72,7 @@ const PageLayout: FC<Props> = (props: Props) => {
         {/* modals */}
         <AnimatePresence mode="wait">
           {showModal && (
-            <ImageModal
+            <ContentModal
               key="image-modal"
               show={showModal}
               close={() => setShowModal(false)}

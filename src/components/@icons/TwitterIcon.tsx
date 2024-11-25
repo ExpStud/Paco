@@ -7,11 +7,7 @@ interface Props extends SVGProps<SVGSVGElement> {
 }
 
 const TwitterIcon: FC<Props> = (props: Props) => {
-  const {
-    color = "white",
-    size = 35,
-    url = "https://twitter.com/expstudio_",
-  } = props;
+  const { color = "white", size = 35, url = "" } = props;
   return (
     <a
       href={url}
