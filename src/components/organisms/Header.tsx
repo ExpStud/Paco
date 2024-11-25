@@ -13,11 +13,11 @@ interface Props {}
 const Header: FC<Props> = (props: Props) => {
   return (
     <motion.header
-      className={`max-width w-full flex items-center justify-between z-20 px-5 md:px-10 xl:px-20 2xl:px-0 py-5 md:py-7 xl:py-12`}
+      className={`max-width w-full flex items-center justify-between z-20 px-5 2xl:px-0 py-5  xl:py-9`}
       {...enterAnimation}
     >
       <Logo />
-      <div className="flex items-center gap-2 lg:gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         <TwitterIcon />
         <TelegramIcon />
         <DexscreenerIcon />
