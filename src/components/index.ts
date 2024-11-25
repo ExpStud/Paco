@@ -14,8 +14,7 @@ const Logo = dynamic(() => import("./atoms/Logo"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead")); 
 const Modal = dynamic(() => import("./molecules/Modal")); 
-const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
-const HeaderContent = dynamic(() => import("./molecules/HeaderContent"));
+const SplashScreen = dynamic(() => import("./molecules/SplashScreen")); 
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -38,8 +37,7 @@ export {
   Modal,
   DexscreenerIcon, 
   SplashScreen,
-  LandingView, 
-  HeaderContent,
+  LandingView,  
   AboutView,
   ContentModal,
   JupIcon,

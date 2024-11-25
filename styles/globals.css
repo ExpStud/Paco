@@ -124,6 +124,11 @@ html {
   @apply flex flex-col items-center justify-around;
 }
 
+.max-width {
+  @apply mx-auto;
+  max-width: 1280px;
+}
+
 /* Animations */
 .transition-1000 {
   @apply transition-all duration-1000;

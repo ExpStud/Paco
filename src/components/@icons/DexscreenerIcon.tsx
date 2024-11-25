@@ -12,7 +12,7 @@ const DexscreenerIcon: FC<Props> = (props: Props) => {
     <a href={url} rel="noreferrer" target="_blank">
       <Image
         src="/images/icons/dexscreener.png"
-        width={3237}
+        width={32}
         height={32}
         alt="Dexscreener"
       />

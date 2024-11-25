@@ -12,22 +12,11 @@ import { ViewContext } from "@contexts";
 
 interface Props {
   children: ReactNode;
-  footer?: boolean;
-  fixed?: boolean; //prevents scroll
-  absolute?: boolean; //allows scroll
-  headerType?: string;
   assets?: boolean[];
 }
 
 const PageLayout: FC<Props> = (props: Props) => {
-  const {
-    footer = true,
-    fixed = false,
-    absolute = false,
-    headerType = "absolute",
-    children,
-    assets = [],
-  } = props;
+  const { children, assets = [] } = props;
 
   //context for splash screen & modals
   const [showView, setShowView] = useState<boolean>(false);
@@ -41,30 +30,23 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   return (
     <ViewContext.Provider value={value}>
-      <div
-        className={`flex flex-col min-h-[100svh] h-full justify-between overflow-none ${
-          fixed ? "fixed inset-0" : absolute ? "absolute inset-0" : "relative"
-        }`}
-      >
+      <div className="flex flex-col h-screen justify-between items-center overflow-none">
         <PageHead
-          title="Name"
+          title="Paco"
           description="Description"
           url="https://addurl.xyz" // no backslash at the end
           twitter="twitterhandle"
         />
-        {/* header */}
-        <Header type={headerType} />
+        <Header />
 
         {/* body */}
         <motion.main
-          className={`flex flex-col h-full w-full overflow-x-clip`}
+          className="max-width flex flex-col h-full w-full overflow-x-hidden"
           {...enterAnimation}
         >
           {children}
         </motion.main>
-
-        {/* footer */}
-        {footer && <Footer />}
+        <Footer />
 
         {/* load screen */}
         {/* {assets && <SplashScreen assets={assets} />} */}
