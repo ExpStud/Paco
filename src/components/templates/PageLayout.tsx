@@ -67,7 +67,7 @@ const PageLayout: FC<Props> = (props: Props) => {
         {footer && <Footer />}
 
         {/* load screen */}
-        {assets && <SplashScreen assets={assets} />}
+        {/* {assets && <SplashScreen assets={assets} />} */}
 
         {/* modals */}
         <AnimatePresence mode="wait">

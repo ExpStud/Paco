@@ -2,40 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-  font-family: 'Manrope';
-  src: url('../public/fonts/manrope/Manrope-Light.ttf') format('truetype');
+  font-family: "Manrope";
+  src: url("../public/fonts/manrope/Manrope-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Manrope';
-  src: url('../public/fonts/manrope/Manrope-Regular.ttf') format('truetype');
+  font-family: "Manrope";
+  src: url("../public/fonts/manrope/Manrope-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Manrope';
-  src: url('../public/fonts/manrope/Manrope-Medium.ttf') format('truetype');
+  font-family: "Manrope";
+  src: url("../public/fonts/manrope/Manrope-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Manrope';
-  src: url('../public/fonts/manrope/Manrope-SemiBold.ttf') format('truetype');
+  font-family: "Manrope";
+  src: url("../public/fonts/manrope/Manrope-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Manrope';
-  src: url('../public/fonts/manrope/Manrope-Bold.ttf') format('truetype');
+  font-family: "Manrope";
+  src: url("../public/fonts/manrope/Manrope-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Manrope';
-  src: url('../public/fonts/manrope/Manrope-ExtraBold.ttf') format('truetype');
+  font-family: "Manrope";
+  src: url("../public/fonts/manrope/Manrope-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
@@ -50,7 +49,7 @@ a {
 
 @layer base {
   html {
-    @apply scroll-smooth bg-fixed bg-template-black text-template-white font-primary;
+    @apply scroll-smooth bg-fixed bg-custom-white text-template-white font-primary;
   }
   h1 {
     @apply font-primary;
@@ -82,16 +81,16 @@ html {
 
 /* Wallet Adapter */
 
-.wallet-adapter-modal-wrapper { 
+.wallet-adapter-modal-wrapper {
   @apply !rounded-sm !bg-opacity-90 !uppercase;
 }
-.wallet-adapter-modal-wrapper h1{ 
+.wallet-adapter-modal-wrapper h1 {
   @apply !text-white;
 }
-.wallet-adapter-button { 
+.wallet-adapter-button {
   @apply hover:!bg-opacity-100;
 }
-.wallet-adapter-modal-button-close{
+.wallet-adapter-modal-button-close {
   @apply !bg-transparent;
 }
 
@@ -126,15 +125,15 @@ html {
 }
 
 /* Animations */
-.transition-1000{
+.transition-1000 {
   @apply transition-all duration-1000;
 }
-.transition-500{
+.transition-500 {
   @apply transition-all duration-500;
 }
-.transition-300{
+.transition-300 {
   @apply transition-all duration-300;
 }
-.transition-200{
+.transition-200 {
   @apply transition-all duration-300;
 }

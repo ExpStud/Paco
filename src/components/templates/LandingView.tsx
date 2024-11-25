@@ -1,8 +1,4 @@
-import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, FC, useContext } from "react";
-import { slideDown } from "@constants";
-import { handleAssetLoad } from "@utils";
-import Image from "next/image";
 import { ViewContext } from "@contexts";
 
 interface Props {

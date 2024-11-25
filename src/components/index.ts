@@ -2,11 +2,13 @@ import dynamic from "next/dynamic";
 
 //icons
 const ArrowIcon = dynamic(() => import("./@icons/ArrowIcon"));
-const TwitterIcon = dynamic(() => import("./@icons/TwitterIcon"));
-const DiscordIcon = dynamic(() => import("./@icons/DiscordIcon")); 
+const TwitterIcon = dynamic(() => import("./@icons/TwitterIcon")); 
 const MenuIcon = dynamic(() => import("./@icons/MenuIcon"));
 const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const DownloadIcon = dynamic(() => import("./@icons/DownloadIcon"));
+const TelegramIcon = dynamic(() => import("./@icons/TelegramIcon"));
+const JupIcon = dynamic(() => import("./@icons/JupIcon"));
+const DexscreenerIcon = dynamic(() => import("./@icons/DexscreenerIcon")); 
 //atoms 
 const Logo = dynamic(() => import("./atoms/Logo"));
 //molecules
@@ -30,15 +32,17 @@ export {
   Footer,
   PageLayout,
   ArrowIcon, 
-  TwitterIcon,
-  DiscordIcon, 
+  TwitterIcon, 
   MenuIcon, 
   CloseIcon,
   Modal,
-  DownloadIcon, 
+  DexscreenerIcon, 
   SplashScreen,
   LandingView, 
   HeaderContent,
   AboutView,
-  ContentModal
+  ContentModal,
+  JupIcon,
+  TelegramIcon,
+  DownloadIcon
 }

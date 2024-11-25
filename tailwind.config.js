@@ -25,6 +25,17 @@ module.exports = {
       },
       colors: {
         //custom
+        "custom-white": "#FFFAE8",
+        "custom-blue": {
+          400: "#50A7F8",
+          500: "#2D8FEA",
+        },
+        "custom-yellow": "#FFF8B7",
+        "window-gray": {
+          200: "#C0C0C0",
+          300: "#B8C0C1",
+          400: "#808080",
+        },
 
         //template
         "template-black": "#121212",
