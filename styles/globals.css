@@ -3,38 +3,38 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Manrope";
-  src: url("../public/fonts/manrope/Manrope-Light.ttf") format("truetype");
+  font-family: "Rubik";
+  src: url("../public/fonts/rubik/Rubik-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: "Manrope";
-  src: url("../public/fonts/manrope/Manrope-Regular.ttf") format("truetype");
+  font-family: "Rubik";
+  src: url("../public/fonts/rubik/Rubik-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Manrope";
-  src: url("../public/fonts/manrope/Manrope-Medium.ttf") format("truetype");
+  font-family: "Rubik";
+  src: url("../public/fonts/rubik/Rubik-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: "Manrope";
-  src: url("../public/fonts/manrope/Manrope-SemiBold.ttf") format("truetype");
+  font-family: "Rubik";
+  src: url("../public/fonts/rubik/Rubik-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: "Manrope";
-  src: url("../public/fonts/manrope/Manrope-Bold.ttf") format("truetype");
+  font-family: "Rubik";
+  src: url("../public/fonts/rubik/Rubik-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "Manrope";
-  src: url("../public/fonts/manrope/Manrope-ExtraBold.ttf") format("truetype");
+  font-family: "Rubik";
+  src: url("../public/fonts/rubik/Rubik-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
@@ -174,4 +174,9 @@ footer {
 }
 .footer-divider-2 div:nth-child(3) {
   background-color: #808080;
+}
+.inner-divider {
+  width: 1.517px;
+  min-height: 33.383px;
+  height: 100%;
 }

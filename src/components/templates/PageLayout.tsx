@@ -30,7 +30,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   return (
     <ViewContext.Provider value={value}>
-      <div className="flex flex-col h-screen justify-between items-center overflow-none">
+      <div className="flex flex-col h-[100svh] justify-between items-center overflow-none">
         <PageHead
           title="Paco"
           description="Description"
@@ -41,7 +41,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         {/* body */}
         <motion.main
-          className="max-width flex flex-col h-full w-full overflow-x-hidden"
+          className="max-width flex flex-col w-full overflow-x-hidden"
           {...enterAnimation}
         >
           {children}
