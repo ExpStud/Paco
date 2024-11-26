@@ -142,7 +142,7 @@ html {
   @apply transition-all duration-300;
 }
 .transition-200 {
-  @apply transition-all duration-300;
+  @apply transition-all duration-200;
 }
 
 footer {

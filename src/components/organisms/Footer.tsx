@@ -7,7 +7,7 @@ import { Clock } from "@components";
 const Footer: FC = () => {
   return (
     <motion.footer
-      className="min-h-[44px] w-full flex items-center justify-between py-1 lg:py-1.5"
+      className=" min-h-[44px] w-full flex items-center justify-between py-1 lg:py-1.5"
       key="footer"
       {...enterAnimation}
     >
@@ -102,12 +102,14 @@ const Footer: FC = () => {
               alt="time"
               width={25}
               height={25}
+              className="cursor-pointer"
             />
             <Image
               src="/images/buttons/speaker.png"
               alt="speaker"
               width={25}
               height={25}
+              className="cursor-pointer"
             />
           </div>
           <Clock />
