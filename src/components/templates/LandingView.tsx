@@ -1,8 +1,9 @@
-import { Dispatch, SetStateAction, FC } from "react";
+import { Dispatch, SetStateAction, FC, useContext } from "react";
 import { handleAssetLoad } from "@utils";
 import Image from "next/image";
 import { isMobile } from "react-device-detect";
 import { DesktopIcon } from "@components";
+import { ViewContext } from "@contexts";
 
 interface Props {
   setAssets: Dispatch<SetStateAction<boolean[]>>;
@@ -10,33 +11,47 @@ interface Props {
 
 const LandingView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
+  const {
+    setShowReplyGuyModal,
+    setShowMemeGeneratorModal,
+    setShowTokenomicsModal,
+    setShowTrashModal,
+  } = useContext(ViewContext);
 
   return (
     <div className="w-full h-full relative">
       {/* desktop icons */}
       <DesktopIcon
         icon="reply-guy"
-        name="Repy Guy"
-        onClick={() => {}}
-        className="top-[20vh] right-[8vw] md:right-[6vw] 1420:right-0"
+        name="Reply guy folder"
+        onDoubleClick={() => {
+          setShowReplyGuyModal(true);
+        }}
+        className="top-[20vh] right-[8vw] md:right-[6vw] 1420:right-0 -mr-1"
       />
       <DesktopIcon
         icon="meme-generator"
         name="Meme Generator"
-        onClick={() => {}}
-        className="top-[32vh] right-[8vw] md:right-[6vw] 1420:right-0"
+        onDoubleClick={() => {
+          setShowMemeGeneratorModal(true);
+        }}
+        className="top-[36vh] right-[8vw] md:right-[6vw] 1420:right-0"
       />
       <DesktopIcon
         icon="tokenomics"
         name="Tokenomics"
-        onClick={() => {}}
-        className="top-[46vh] right-[8vw] md:right-[6vw] 1420:right-0"
+        onDoubleClick={() => {
+          setShowTokenomicsModal(true);
+        }}
+        className="top-[52vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-3"
       />
       <DesktopIcon
         icon="trash"
         name="Trasssshhh"
-        onClick={() => {}}
-        className="top-[82vh] right-[8vw] md:right-[6vw] 1420:right-0"
+        onDoubleClick={() => {
+          setShowTrashModal(true);
+        }}
+        className="top-[82vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-3"
       />
 
       {/* paco */}

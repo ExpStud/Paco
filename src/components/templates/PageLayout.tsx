@@ -20,12 +20,23 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   //context for splash screen & modals
   const [showView, setShowView] = useState<boolean>(false);
-  const [showModal, setShowModal] = useState<boolean>(false);
+  const [showReplyGuyModal, setShowReplyGuyModal] = useState<boolean>(false);
+  const [showMemeGeneratorModal, setShowMemeGeneratorModal] =
+    useState<boolean>(false);
+  const [showTokenomicsModal, setShowTokenomicsModal] =
+    useState<boolean>(false);
+  const [showTrashModal, setShowTrashModal] = useState<boolean>(false);
   const value = {
     showView,
     setShowView,
-    showModal,
-    setShowModal,
+    showReplyGuyModal,
+    setShowReplyGuyModal,
+    showMemeGeneratorModal,
+    setShowMemeGeneratorModal,
+    showTokenomicsModal,
+    setShowTokenomicsModal,
+    showTrashModal,
+    setShowTrashModal,
   };
 
   return (
@@ -53,11 +64,32 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         {/* modals */}
         <AnimatePresence mode="wait">
-          {showModal && (
+          {showReplyGuyModal && (
             <ContentModal
-              key="image-modal"
-              show={showModal}
-              close={() => setShowModal(false)}
+              key="reply"
+              show={showReplyGuyModal}
+              close={() => setShowReplyGuyModal(false)}
+            />
+          )}
+          {showMemeGeneratorModal && (
+            <ContentModal
+              key="meme"
+              show={showMemeGeneratorModal}
+              close={() => setShowMemeGeneratorModal(false)}
+            />
+          )}
+          {showTokenomicsModal && (
+            <ContentModal
+              key="tokenomics"
+              show={showTokenomicsModal}
+              close={() => setShowTokenomicsModal(false)}
+            />
+          )}
+          {showTrashModal && (
+            <ContentModal
+              key="trash"
+              show={showTrashModal}
+              close={() => setShowTrashModal(false)}
             />
           )}
         </AnimatePresence>

@@ -32,7 +32,7 @@ const DesktopIcon: React.FC<Props> = (props: Props) => {
         height={48}
         alt={name}
       />
-      <p className="text-sm"></p>
+      <p className="text-sm">{name}</p>
     </div>
   );
 };
