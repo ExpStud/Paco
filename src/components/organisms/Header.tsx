@@ -13,7 +13,7 @@ interface Props {}
 const Header: FC<Props> = (props: Props) => {
   return (
     <motion.header
-      className={` w-full flex items-center justify-between z-20 px-5 xl:px-16 2xl:px-24 py-5 xl:py-9`}
+      className="absolute top-0 w-full flex items-center justify-between z-20 px-5 xl:px-16 2xl:px-24 py-5 xl:py-9"
       {...enterAnimation}
     >
       <Logo />

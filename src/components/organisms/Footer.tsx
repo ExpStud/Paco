@@ -61,7 +61,7 @@ const Footer: FC = () => {
           <FooterDividerOne className="mr-1.5" />
           <FooterDividerTwo />
         </div>
-        <div className="flex gap-[3px] mx-2 ">
+        <div className="hidden md:flex gap-[3px] mx-2 ">
           <a href="https://jup.ag/" target="_blank" rel="noreferrer">
             <Image
               src="/images/buttons/xxx.svg"
@@ -90,7 +90,7 @@ const Footer: FC = () => {
           </a>
         </div>
       </div>
-      <div className="flex items-center self-start h-full mr-4">
+      <div className="flex items-center self-start h-full mr-1">
         <div className="flex mx-1 h-full">
           <div className="inner-divider bg-window-gray-400" />
           <div className="inner-divider bg-white" />

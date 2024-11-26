@@ -41,7 +41,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         {/* body */}
         <motion.main
-          className="max-width flex flex-col w-full overflow-x-hidden"
+          className="max-width flex flex-col flex-grow w-full overflow-x-hidden"
           {...enterAnimation}
         >
           {children}
