@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FC } from "react";
 import { enterAnimation } from "@constants";
 import Image from "next/image";
+import { Clock } from "@components";
 
 const Footer: FC = () => {
   return (
@@ -94,7 +95,7 @@ const Footer: FC = () => {
           <div className="inner-divider bg-window-gray-400" />
           <div className="inner-divider bg-white" />
         </div>
-        <div className="flex md:flex-col-reverse lg:flex-row gap-1">
+        <div className="footer-time">
           <div className="flex gap-1">
             <Image
               src="/images/buttons/time.png"
@@ -109,6 +110,7 @@ const Footer: FC = () => {
               height={25}
             />
           </div>
+          <Clock />
         </div>
       </div>
     </motion.footer>

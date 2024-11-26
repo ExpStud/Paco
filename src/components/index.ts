@@ -15,6 +15,7 @@ const Logo = dynamic(() => import("./atoms/Logo"));
 const PageHead = dynamic(() => import("./molecules/PageHead")); 
 const Modal = dynamic(() => import("./molecules/Modal")); 
 const SplashScreen = dynamic(() => import("./molecules/SplashScreen")); 
+const Clock = dynamic(() => import("./molecules/Clock")); 
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -42,5 +43,6 @@ export {
   ContentModal,
   JupIcon,
   TelegramIcon,
-  DownloadIcon
+  DownloadIcon,
+  Clock
 }

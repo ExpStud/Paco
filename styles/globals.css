@@ -180,3 +180,14 @@ footer {
   min-height: 33.383px;
   height: 100%;
 }
+.footer-time {
+  background: var(--Window-Content-Base-Grey-2, #c0c0c0);
+  box-shadow: -1.517px -1.517px 0px 0px #dfdfdf inset,
+    1.517px 1.517px 0px 0px #808080 inset;
+  display: flex;
+  height: 34.9px;
+  padding: 6.07px 4.552px 6.828px 4.552px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 9.104px;
+}
