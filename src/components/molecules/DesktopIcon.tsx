@@ -16,14 +16,12 @@ const DesktopIcon: React.FC<Props> = (props: Props) => {
     className,
     ...divProps
   } = props;
+
   return (
     <div
       className={`absolute col-centered z-10 cursor-pointer transition-300 ${
         className ?? ""
       }  "`}
-      // drag
-      // initial={{ left: initialX, top: initialY }}
-      // dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
       {...divProps}
     >
       <Image

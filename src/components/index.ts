@@ -11,6 +11,7 @@ const JupIcon = dynamic(() => import("./@icons/JupIcon"));
 const DexscreenerIcon = dynamic(() => import("./@icons/DexscreenerIcon")); 
 //atoms 
 const Logo = dynamic(() => import("./atoms/Logo"));
+const ModalScrollBar = dynamic(() => import("./atoms/ModalScrollBar"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead")); 
 const Modal = dynamic(() => import("./molecules/Modal")); 
@@ -52,5 +53,6 @@ export {
   DesktopIcon,
   MemeGeneratorModal,
   TokenomicsModal,
-  TrashModal
+  TrashModal,
+  ModalScrollBar
 }

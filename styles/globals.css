@@ -194,8 +194,21 @@ footer {
   gap: 9.104px;
 }
 .modal-container {
+  @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2  py-1.5 px-[7px] transition-300 ease-in flex flex-col;
   background: var(--Window-Content-Base-Grey-2, #c0c0c0);
   box-shadow: -2.105px -2.105px 0px 0px #0a0a0a inset,
     2.105px 2.105px 0px 0px #dfdfdf inset,
     -4.211px -4.211px 0px 0px #808080 inset, 4.211px 4.211px 0px 0px #fff inset;
+}
+
+.modal-content-container {
+  @apply flex py-10 px-12 mb-4 h-full flex-grow overflow-y-auto;
+  background: #e4e4e4;
+  box-shadow: -2.105px -2.105px 0px 0px #fff inset,
+    2.105px 2.105px 0px 0px #0a0a0a inset,
+    -4.211px -4.211px 0px 0px #dfdfdf inset,
+    4.211px 4.211px 0px 0px #808080 inset;
+}
+.modal-content-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
 }

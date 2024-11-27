@@ -36,7 +36,9 @@ module.exports = {
           300: "#B8C0C1",
           400: "#808080",
         },
-
+        "custom-gray": {
+          900: "#222",
+        },
         //template
         "template-black": "#121212",
         "template-white": "#F3F1EA",
