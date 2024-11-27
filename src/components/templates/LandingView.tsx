@@ -25,33 +25,45 @@ const LandingView: FC<Props> = (props: Props) => {
         icon="reply-guy"
         name="Reply guy folder"
         onDoubleClick={() => {
-          setShowReplyGuyModal(true);
+          if (!isMobile) setShowReplyGuyModal(true);
         }}
-        className="top-[20vh] right-[8vw] md:right-[6vw] 1420:right-0 -mr-1"
+        onClick={() => {
+          if (isMobile) setShowReplyGuyModal(true);
+        }}
+        className="top-[20vh] right-[8vw] md:right-[6vw] 1420:right-0 "
       />
       <DesktopIcon
         icon="meme-generator"
         name="Meme Generator"
         onDoubleClick={() => {
-          setShowMemeGeneratorModal(true);
+          if (!isMobile) setShowMemeGeneratorModal(true);
         }}
-        className="top-[36vh] right-[8vw] md:right-[6vw] 1420:right-0"
+        onClick={() => {
+          if (isMobile) setShowMemeGeneratorModal(true);
+        }}
+        className="top-[36vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-1"
       />
       <DesktopIcon
         icon="tokenomics"
         name="Tokenomics"
         onDoubleClick={() => {
-          setShowTokenomicsModal(true);
+          if (!isMobile) setShowTokenomicsModal(true);
         }}
-        className="top-[52vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-3"
+        onClick={() => {
+          if (isMobile) setShowTokenomicsModal(true);
+        }}
+        className="top-[52vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-4"
       />
       <DesktopIcon
         icon="trash"
         name="Trasssshhh"
         onDoubleClick={() => {
-          setShowTrashModal(true);
+          if (!isMobile) setShowTrashModal(true);
         }}
-        className="top-[82vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-3"
+        onClick={() => {
+          if (isMobile) setShowTrashModal(true);
+        }}
+        className="top-[82vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-4"
       />
 
       {/* paco */}
@@ -61,7 +73,7 @@ const LandingView: FC<Props> = (props: Props) => {
         width={623}
         height={528}
         className="absolute-center z-0"
-        onLoadingComplete={() => handleAssetLoad(0, setAssets)}
+        onLoad={() => handleAssetLoad(0, setAssets)}
       />
       {/* post it */}
       <div className="absolute bottom-0 xs:bottom-24 xl:bottom-1/4 left-2 xs:left-14 xl:left-0 flex flex-col items-end scale-75 xs:scale-100 cursor-pointer transition-300">

@@ -193,3 +193,9 @@ footer {
   align-items: center;
   gap: 9.104px;
 }
+.modal-container {
+  background: var(--Window-Content-Base-Grey-2, #c0c0c0);
+  box-shadow: -2.105px -2.105px 0px 0px #0a0a0a inset,
+    2.105px 2.105px 0px 0px #dfdfdf inset,
+    -4.211px -4.211px 0px 0px #808080 inset, 4.211px 4.211px 0px 0px #fff inset;
+}
