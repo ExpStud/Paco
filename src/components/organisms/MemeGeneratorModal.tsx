@@ -6,14 +6,19 @@ interface Props {
   close: () => void;
 }
 
-const ContentModal: FC<Props> = (props: Props) => {
+const MemeGenerator: FC<Props> = (props: Props) => {
   const { show, close } = props;
 
   return (
-    <Modal show={show} onClick={() => close()}>
+    <Modal
+      show={show}
+      onClick={() => close()}
+      title={"Meme Generator"}
+      titleSrc="meme-generator.png"
+    >
       <div>Add content</div>
     </Modal>
   );
 };
 
-export default ContentModal;
+export default MemeGenerator;

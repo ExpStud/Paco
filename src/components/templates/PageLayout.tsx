@@ -4,7 +4,10 @@ import {
   Header,
   Footer,
   SplashScreen,
-  ContentModal,
+  ReplyGuyModal,
+  MemeGeneratorModal,
+  TokenomicsModal,
+  TrashModal,
 } from "@components";
 import { enterAnimation } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
@@ -65,28 +68,28 @@ const PageLayout: FC<Props> = (props: Props) => {
         {/* modals */}
         <AnimatePresence mode="wait">
           {showReplyGuyModal && (
-            <ContentModal
+            <ReplyGuyModal
               key="reply"
               show={showReplyGuyModal}
               close={() => setShowReplyGuyModal(false)}
             />
           )}
           {showMemeGeneratorModal && (
-            <ContentModal
+            <MemeGeneratorModal
               key="meme"
               show={showMemeGeneratorModal}
               close={() => setShowMemeGeneratorModal(false)}
             />
           )}
           {showTokenomicsModal && (
-            <ContentModal
+            <TokenomicsModal
               key="tokenomics"
               show={showTokenomicsModal}
               close={() => setShowTokenomicsModal(false)}
             />
           )}
           {showTrashModal && (
-            <ContentModal
+            <TrashModal
               key="trash"
               show={showTrashModal}
               close={() => setShowTrashModal(false)}

@@ -20,7 +20,10 @@ const DesktopIcon = dynamic(() => import("./molecules/DesktopIcon"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
-const ContentModal = dynamic(() => import("./organisms/ContentModal"));
+const ReplyGuyModal = dynamic(() => import("./organisms/ReplyGuyModal"));
+const MemeGeneratorModal = dynamic(() => import("./organisms/MemeGeneratorModal"));
+const TokenomicsModal = dynamic(() => import("./organisms/TokenomicsModal"));
+const TrashModal = dynamic(() => import("./organisms/TrashModal"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -41,10 +44,13 @@ export {
   SplashScreen,
   LandingView,  
   AboutView,
-  ContentModal,
+  ReplyGuyModal,
   JupIcon,
   TelegramIcon,
   DownloadIcon,
   Clock,
-  DesktopIcon
+  DesktopIcon,
+  MemeGeneratorModal,
+  TokenomicsModal,
+  TrashModal
 }
