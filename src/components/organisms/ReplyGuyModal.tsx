@@ -18,7 +18,7 @@ const ReplyGuyModal: FC<Props> = (props: Props) => {
       title={"Reply guy folder"}
       titleSrc="reply-guy.png"
     >
-      <div className="grid grid-cols-1 500:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9 justify-center items-center">
+      <div className="grid grid-cols-1 500:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9 justify-center items-center py-10 px-12">
         {REPLY_GUY_ASSETS.map((item) => (
           <div className="asset-container relative p-[5px]" key={item.src}>
             <Image

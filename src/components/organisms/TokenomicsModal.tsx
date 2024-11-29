@@ -1,5 +1,7 @@
 import { FC } from "react";
 import { Modal } from "@components";
+import Image from "next/image";
+import { isMobile } from "react-device-detect";
 
 interface Props {
   show: boolean;
@@ -16,7 +18,17 @@ const TokenomicsModal: FC<Props> = (props: Props) => {
       title={"Tokenomics"}
       titleSrc="tokenomics.png"
     >
-      <div>Add content</div>
+      <div className="relative w-full h-full px-1 pb-1">
+        <Image
+          src={`${
+            process.env.CLOUDFLARE_STORAGE
+          }/images/modals/tokenomics/tokenomics${isMobile ? "" : "-lg"}.jpg`}
+          alt={"Tokenomics"}
+          width={1018}
+          height={2486}
+          className="w-screen"
+        />
+      </div>
     </Modal>
   );
 };

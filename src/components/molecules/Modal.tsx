@@ -70,8 +70,8 @@ const Modal: FC<Props> = (props: Props) => {
         className={`modal-container 
           ${className} ${
           maximize
-            ? "w-[99vw] h-[99svh]"
-            : "h-[85svh] lg:h-[695px] w-[94vw] lg:w-[846px]"
+            ? "w-[99vw] top-1 bottom-[47px] left-1/2 transform -translate-x-1/2"
+            : "h-[85svh] lg:h-[695px] w-[94vw] lg:w-[846px] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
         }`}
       >
         {/* blue header */}
@@ -124,11 +124,13 @@ const Modal: FC<Props> = (props: Props) => {
         {/* body */}
         <div className="flex overflow-hidden w-full h-full">
           {/* content */}
-          <div
-            className="modal-content-container justify-center w-full h-full"
-            onScroll={handleScroll}
-          >
-            <div className="min-h-[800px]">{children}</div>
+          <div className="model-content-container-outline pt-[5px] w-full h-full">
+            <div
+              className="modal-content-container justify-center w-full h-full"
+              onScroll={handleScroll}
+            >
+              <div className="min-h-[800px]">{children}</div>
+            </div>
           </div>
           {/* scroll */}
           <div className="relative flex flex-col items-center justify-between h-full ml-1">
