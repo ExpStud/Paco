@@ -9,6 +9,9 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    CLOUDFLARE_STORAGE: "",
+  },
 };
 
 module.exports = nextConfig;

@@ -1,8 +1,10 @@
 
-export interface Collection {
-  id: number;
-  name: string;
+export interface Assets {
   src: string;
-  description: string;
-  exchange: string;
-}
+  width?:number
+  height?: string;
+  alt?: string;
+} 
+export interface DownloadableAssets extends Assets { 
+  downloadSrc: string;
+}  

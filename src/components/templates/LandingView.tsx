@@ -12,6 +12,10 @@ interface Props {
 const LandingView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
   const {
+    showReplyGuyModal,
+    showMemeGeneratorModal,
+    showTokenomicsModal,
+    showTrashModal,
     setShowReplyGuyModal,
     setShowMemeGeneratorModal,
     setShowTokenomicsModal,
@@ -31,6 +35,7 @@ const LandingView: FC<Props> = (props: Props) => {
           if (isMobile) setShowReplyGuyModal(true);
         }}
         className="top-[20vh] right-[8vw] md:right-[6vw] 1420:right-0 "
+        highlight={showReplyGuyModal}
       />
       <DesktopIcon
         icon="meme-generator"
@@ -42,6 +47,7 @@ const LandingView: FC<Props> = (props: Props) => {
           if (isMobile) setShowMemeGeneratorModal(true);
         }}
         className="top-[36vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-1"
+        highlight={showMemeGeneratorModal}
       />
       <DesktopIcon
         icon="tokenomics"
@@ -53,6 +59,7 @@ const LandingView: FC<Props> = (props: Props) => {
           if (isMobile) setShowTokenomicsModal(true);
         }}
         className="top-[52vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-4"
+        highlight={showTokenomicsModal}
       />
       <DesktopIcon
         icon="trash"
@@ -64,6 +71,7 @@ const LandingView: FC<Props> = (props: Props) => {
           if (isMobile) setShowTrashModal(true);
         }}
         className="top-[82vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-4"
+        highlight={showTrashModal}
       />
 
       {/* paco */}

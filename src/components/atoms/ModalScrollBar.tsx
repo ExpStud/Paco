@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FC } from "react";
 
 const ModalScrollBar: FC<{ position: number }> = ({ position }) => {
-  console.log("ModalScrollBar ", position);
+  // console.log("ModalScrollBar ", position);
   return (
     <div
       className="relative h-full flex-grow -z-10"

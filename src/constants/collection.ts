@@ -1,11 +1,40 @@
-import { Collection } from "@types";
+import { DownloadableAssets } from "@types";
 
-export const collection: Collection[] = [
-  {
-    id: 0,
-    name: "",
+export const REPLY_GUY_ASSETS: DownloadableAssets[] = [
+  { 
     src: "",
-    description: "",
-    exchange: ""
+    downloadSrc: ""
+  },
+  { 
+    src: "",
+    downloadSrc: ""
   }, 
+  { 
+    src: "",
+    downloadSrc: ""
+  }, 
+  { 
+    src: "",
+    downloadSrc: ""
+  }, 
+  { 
+    src: "",
+    downloadSrc: ""
+  }, 
+  { 
+    src: "",
+    downloadSrc: ""
+  }, 
+  { 
+    src: "",
+    downloadSrc: ""
+  }, 
+  { 
+    src: "",
+    downloadSrc: ""
+  }, 
+  { 
+    src: "",
+    downloadSrc: ""
+  },  
 ];

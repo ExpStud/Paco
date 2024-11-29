@@ -6,6 +6,7 @@ interface Props extends React.HTMLProps<HTMLDivElement> {
   name: string;
   initialX?: number;
   initialY?: number;
+  highlight?: boolean;
 }
 const DesktopIcon: React.FC<Props> = (props: Props) => {
   const {
@@ -13,6 +14,7 @@ const DesktopIcon: React.FC<Props> = (props: Props) => {
     name,
     initialX = 0,
     initialY = 0,
+    highlight,
     className,
     ...divProps
   } = props;
@@ -30,7 +32,11 @@ const DesktopIcon: React.FC<Props> = (props: Props) => {
         height={48}
         alt={name}
       />
-      <p className="text-sm">{name}</p>
+      <p
+        className={`text-sm p-0.5 ${highlight ? "bg-blue-600 text-white" : ""}`}
+      >
+        {name}
+      </p>
     </div>
   );
 };

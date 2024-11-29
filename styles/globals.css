@@ -144,6 +144,9 @@ html {
 .transition-200 {
   @apply transition-all duration-200;
 }
+.transition-100 {
+  @apply transition-all duration-100;
+}
 
 footer {
   background: #c2c2c2;
