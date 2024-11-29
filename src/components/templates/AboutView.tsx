@@ -20,7 +20,7 @@ const AboutView: FC<Props> = (props: Props) => {
     >
       <motion.div {...slideRight(showView)}>
         <Image
-          src="/images/logo.png"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/logo.png`}
           alt="BRKRS"
           width={100}
           height={100}
@@ -29,7 +29,7 @@ const AboutView: FC<Props> = (props: Props) => {
       </motion.div>
       <motion.div {...slideLeft(showView)}>
         <Image
-          src="/images/logo.png"
+          src={`${process.env.CLOUDFLARE_STORAGE}/images/logo.png`}
           alt="BRKRS"
           width={100}
           height={100}

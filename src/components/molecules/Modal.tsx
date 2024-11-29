@@ -87,7 +87,7 @@ const Modal: FC<Props> = (props: Props) => {
           </div>
           <div className="flex">
             <Image
-              src="/images/buttons/minimize.svg"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/minimize.svg`}
               width={30}
               height={30}
               alt="minimize"
@@ -95,7 +95,7 @@ const Modal: FC<Props> = (props: Props) => {
               onClick={() => setMinimize(!minimize)}
             />
             <Image
-              src="/images/buttons/maximize.svg"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/maximize.svg`}
               width={30}
               height={30}
               alt="maximize"
@@ -103,7 +103,7 @@ const Modal: FC<Props> = (props: Props) => {
               onClick={() => setMaximize(!maximize)}
             />
             <Image
-              src="/images/buttons/close.svg"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/close.svg`}
               width={30}
               height={30}
               alt="close"
@@ -134,7 +134,7 @@ const Modal: FC<Props> = (props: Props) => {
               onMouseLeave={handleMouseUp}
             >
               <Image
-                src="/images/buttons/scroll-up.svg"
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/scroll-up.svg`}
                 width={34}
                 height={36}
                 alt="up"
@@ -148,7 +148,7 @@ const Modal: FC<Props> = (props: Props) => {
               onMouseLeave={handleMouseUp}
             >
               <Image
-                src="/images/buttons/scroll-down.svg"
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/scroll-down.svg`}
                 width={34}
                 height={36}
                 alt="down"
@@ -172,7 +172,7 @@ const Modal: FC<Props> = (props: Props) => {
 //         height="408"
 //         viewBox="0 0 34 408"
 //         fill="none"
-//         xmlns="http://www.w3.org/2000/svg"
+//         xmlns="http://www.w3.org/2000/svg`}
 //         style={{ transform: `translateY(calc(${position}% - 36px))` }}
 //       >
 //         <g filter="url(#filter0_iiii_361_1137)">

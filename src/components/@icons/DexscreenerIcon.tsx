@@ -11,7 +11,7 @@ const DexscreenerIcon: FC<Props> = (props: Props) => {
   return (
     <a href={url} rel="noreferrer" target="_blank">
       <Image
-        src="/images/icons/dexscreener.png"
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/icons/dexscreener.png`}
         width={32}
         height={32}
         alt="Dexscreener"

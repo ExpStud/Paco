@@ -15,7 +15,7 @@ const Footer: FC = () => {
         <div className="flex items-center">
           <a href="https://jup.ag/" target="_blank" rel="noreferrer">
             <Image
-              src="/images/buttons/solana.svg"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/solana.svg`}
               alt="solana"
               width={86}
               height={35}
@@ -27,7 +27,7 @@ const Footer: FC = () => {
           <div className="flex gap-2 mx-2">
             <a href="https://jup.ag/" target="_blank" rel="noreferrer">
               <Image
-                src="/images/buttons/pencil.png"
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/pencil.png`}
                 alt="pencil"
                 width={25}
                 height={25}
@@ -35,7 +35,7 @@ const Footer: FC = () => {
             </a>
             <a href="https://jup.ag/" target="_blank" rel="noreferrer">
               <Image
-                src="/images/buttons/file.png"
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/file.png`}
                 alt="file"
                 width={25}
                 height={25}
@@ -43,7 +43,7 @@ const Footer: FC = () => {
             </a>
             <a href="https://jup.ag/" target="_blank" rel="noreferrer">
               <Image
-                src="/images/buttons/outlook.png"
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/outlook.png`}
                 alt="outlook"
                 width={25}
                 height={25}
@@ -51,7 +51,7 @@ const Footer: FC = () => {
             </a>
             <a href="https://jup.ag/" target="_blank" rel="noreferrer">
               <Image
-                src="/images/buttons/explorer.png"
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/explorer.png`}
                 alt="explorer"
                 width={25}
                 height={25}
@@ -64,7 +64,7 @@ const Footer: FC = () => {
         <div className="hidden md:flex gap-[3px] mx-2 ">
           <a href="https://jup.ag/" target="_blank" rel="noreferrer">
             <Image
-              src="/images/buttons/xxx.svg"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/xxx.svg`}
               alt="xxx"
               width={243}
               height={35}
@@ -73,7 +73,7 @@ const Footer: FC = () => {
 
           <a href="https://jup.ag/" target="_blank" rel="noreferrer">
             <Image
-              src="/images/buttons/outlook-lg.svg"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/outlook-lg.svg`}
               alt="outlook-lg"
               width={243}
               height={35}
@@ -81,7 +81,7 @@ const Footer: FC = () => {
           </a>
           <a href="https://jup.ag/" target="_blank" rel="noreferrer">
             <Image
-              src="/images/buttons/buy-solana.svg"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/buy-solana.svg`}
               alt="buy solana"
               width={243}
               height={35}
@@ -98,14 +98,14 @@ const Footer: FC = () => {
         <div className="footer-time">
           <div className="flex gap-1">
             <Image
-              src="/images/buttons/time.png"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/time.png`}
               alt="time"
               width={25}
               height={25}
               className="cursor-pointer"
             />
             <Image
-              src="/images/buttons/speaker.png"
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/speaker.png`}
               alt="speaker"
               width={25}
               height={25}

@@ -6,7 +6,7 @@ const Logo: FC = () => {
   return (
     <Link href="/">
       <Image
-        src="/images/logos/paco@4x.png"
+        src={`${process.env.CLOUDFLARE_STORAGE}/images/logos/paco@4x.png`}
         height={54}
         width={54}
         alt="Logo"
