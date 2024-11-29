@@ -215,3 +215,10 @@ footer {
 .modal-content-container::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Opera */
 }
+
+.asset-container {
+  background: var(--Window-Content-Base-Grey-2, #c0c0c0);
+  box-shadow: -0.873px -0.873px 0px 0px #0a0a0a inset,
+    0.873px 0.873px 0px 0px #fff inset, -1.746px -1.746px 0px 0px #808080 inset,
+    1.746px 1.746px 0px 0px #dfdfdf inset;
+}
