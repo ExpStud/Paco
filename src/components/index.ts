@@ -10,6 +10,7 @@ const TelegramIcon = dynamic(() => import("./@icons/TelegramIcon"));
 const JupIcon = dynamic(() => import("./@icons/JupIcon"));
 const DexscreenerIcon = dynamic(() => import("./@icons/DexscreenerIcon")); 
 const FontSizeIcon = dynamic(() => import("./@icons/FontSizeIcon"));
+const ColorSelectIcon = dynamic(() => import("./@icons/ColorSelectIcon"));
 //atoms 
 const Logo = dynamic(() => import("./atoms/Logo"));
 const ModalScrollBar = dynamic(() => import("./atoms/ModalScrollBar"));
@@ -60,5 +61,6 @@ export {
   ModalScrollBar,
   WideModal,
   TextInput,
-  FontSizeIcon
+  FontSizeIcon,
+  ColorSelectIcon
 }

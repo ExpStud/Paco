@@ -255,3 +255,9 @@ footer {
   box-shadow: -1px -1px 0px 0px #fff inset, 1px 1px 0px 0px #808080 inset,
     -2px -2px 0px 0px #dfdfdf inset, 2px 2px 0px 0px #0a0a0a inset;
 }
+.color-icon {
+  box-shadow: -1.358px -1.358px 0px 0px #fff inset,
+    1.358px 1.358px 0px 0px #0a0a0a inset,
+    -2.716px -2.716px 0px 0px #dfdfdf inset,
+    2.716px 2.716px 0px 0px #808080 inset;
+}

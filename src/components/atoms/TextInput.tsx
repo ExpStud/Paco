@@ -1,5 +1,5 @@
 import { FC, InputHTMLAttributes, useState } from "react";
-import { FontSizeIcon } from "@components";
+import { ColorSelectIcon, FontSizeIcon } from "@components";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   handleInput: (value: string) => void;
@@ -69,7 +69,10 @@ const TextInput: FC<Props> = (props: Props) => {
             selectedSize={selectedFontSize}
           />
         </div>
-        <div className=""></div>
+        <div className="flex items-end px-3 py-2 gap-2">
+          <ColorSelectIcon color="black" handleClick={handleColorChange} />
+          <ColorSelectIcon color="white" handleClick={handleColorChange} />
+        </div>
       </div>
     </div>
   );
