@@ -19,7 +19,7 @@ const TextInput: FC<Props> = (props: Props) => {
   } = props;
 
   const [value, setValue] = useState<string>();
-  const [selectedFontSize, setSelectedFontSize] = useState<10 | 14 | 18>(10);
+  const [selectedFontSize, setSelectedFontSize] = useState<10 | 14 | 18>(14);
 
   const charLim: number = 254; //254 is the max length for email addresses
 
@@ -39,7 +39,7 @@ const TextInput: FC<Props> = (props: Props) => {
     <div className="text-options-container py-0.5">
       <div className=" relative flex w-[525px] h-[40px] divide-x-[1px] divide-[#C4C4C4]">
         <input
-          className={`cursor-pointer h-full w-full bg-transparent outline-none focus:outline-none active:outline-none text-xs pl-4 placeholder:text-[#808080] ${className} ${
+          className={`h-full w-full bg-transparent outline-none focus:outline-none active:outline-none text-xs pl-4 placeholder:text-[#808080] ${className} ${
             value && (value.length >= charLim || error)
               ? "text-theme-red"
               : "text-black"

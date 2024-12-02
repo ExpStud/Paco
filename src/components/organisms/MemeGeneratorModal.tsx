@@ -15,15 +15,26 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
   const [selectedMeme, setSelectedMeme] = useState<DownloadableAsset>(
     REPLY_GUY_ASSETS[0]
   );
+  const [text, setText] = useState<string>("");
+  const [color, setColor] = useState<"text-black" | "text-white">("text-black");
+  const [fontSize, setFontSize] = useState<
+    "text-[10px]" | "text-[14px]" | "text-[18px]"
+  >("text-[14px]");
 
   const handleInput = (value: string) => {
-    console.log("value ", value);
+    setText(value);
   };
   const handleColorChange = (value: string) => {
-    console.log("value ", value);
+    setColor(value === "black" ? "text-black" : "text-white");
   };
   const handleFontSizeChange = (value: number) => {
-    console.log("value ", value);
+    setFontSize(
+      value === 10
+        ? "text-[10px]"
+        : value === 14
+        ? "text-[14px]"
+        : "text-[18px]"
+    );
   };
 
   return (
@@ -33,7 +44,7 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
       title={"Meme Generator"}
       titleSrc="meme-generator.png"
     >
-      <div className="flex flex-col-reverse lg:flex-row justify-around items-start gap-5 ">
+      <div className="flex flex-col-reverse lg:flex-row justify-around items-start gap-5">
         {/* selector */}
         <div className="flex flex-col justify-between  h-full max-h-[535px]">
           <div className="meme-selector-container p-1">
@@ -71,14 +82,21 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
         {/* image + actions */}
         <div className="flex flex-col lg:h-full justify-between">
           {/*  max-w-[304px] md:max-w-[442px] */}
-          <div className="col-centered lg:w-[461px] lg:h-[461px]">
-            <Image
-              src={`${process.env.CLOUDFLARE_STORAGE}/images/modals/downloads/${selectedMeme.src}`}
-              alt={selectedMeme.downloadSrc}
-              width={461}
-              height={461}
-              className="meme-image-container lg:w-auto w-auto lg:max-w-[461px] h-[300px] md:h-[369px] lg:h-[461px] object-contain"
-            />
+          <div className="col-centered lg:w-[461px] lg:h-[461px] relative">
+            <div className="relative">
+              <Image
+                src={`${process.env.CLOUDFLARE_STORAGE}/images/modals/downloads/${selectedMeme.src}`}
+                alt={selectedMeme.downloadSrc}
+                width={461}
+                height={461}
+                className="meme-image-container lg:w-auto w-auto lg:max-w-[461px] h-[300px] md:h-[369px] lg:h-[461px] object-contain"
+              />
+              <div
+                className={`absolute top-10 right-10 cursor-pointer ${color} ${fontSize}`}
+              >
+                {text}
+              </div>
+            </div>
           </div>
         </div>
       </div>
