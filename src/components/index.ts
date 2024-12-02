@@ -9,9 +9,11 @@ const DownloadIcon = dynamic(() => import("./@icons/DownloadIcon"));
 const TelegramIcon = dynamic(() => import("./@icons/TelegramIcon"));
 const JupIcon = dynamic(() => import("./@icons/JupIcon"));
 const DexscreenerIcon = dynamic(() => import("./@icons/DexscreenerIcon")); 
+const FontSizeIcon = dynamic(() => import("./@icons/FontSizeIcon"));
 //atoms 
 const Logo = dynamic(() => import("./atoms/Logo"));
 const ModalScrollBar = dynamic(() => import("./atoms/ModalScrollBar"));
+const TextInput = dynamic(() => import("./atoms/TextInput"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead")); 
 const Modal = dynamic(() => import("./molecules/Modal")); 
@@ -56,5 +58,7 @@ export {
   TokenomicsModal,
   TrashModal,
   ModalScrollBar,
-  WideModal
+  WideModal,
+  TextInput,
+  FontSizeIcon
 }

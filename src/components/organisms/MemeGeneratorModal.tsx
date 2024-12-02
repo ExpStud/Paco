@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { WideModal } from "@components";
+import { TextInput, WideModal } from "@components";
 import { REPLY_GUY_ASSETS } from "@constants";
 import Image from "next/image";
 import { DownloadableAsset } from "src/types";
@@ -16,6 +16,16 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
     REPLY_GUY_ASSETS[0]
   );
 
+  const handleInput = (value: string) => {
+    console.log("value ", value);
+  };
+  const handleColorChange = (value: string) => {
+    console.log("value ", value);
+  };
+  const handleFontSizeChange = (value: number) => {
+    console.log("value ", value);
+  };
+
   return (
     <WideModal
       show={show}
@@ -25,41 +35,49 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
     >
       <div className="flex flex-col-reverse lg:flex-row justify-around items-start gap-5 ">
         {/* selector */}
-        <div className="meme-selector-container overflow-auto">
-          <div className="flex flex-col h-full justify-between pt-1">
-            <div className="meme-selector-bg grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center items-center py-5 px-6 lg:w-[540px] lg:h-[461px]">
-              {REPLY_GUY_ASSETS.map((item) => {
-                const isSelected = selectedMeme.src === item.src;
-                return (
-                  <div
-                    className={`border-4  relative cursor-pointer transition-200 ${
-                      isSelected ? "border-custom-blue-500" : "border-white"
-                    }`}
-                    key={item.src}
-                    onClick={() => setSelectedMeme(item)}
-                  >
-                    <Image
-                      src={`${process.env.CLOUDFLARE_STORAGE}/images/modals/downloads/${item.src}`}
-                      alt={item.src}
-                      width={110}
-                      height={110}
-                      className="object-cover aspect-square"
-                    />
-                  </div>
-                );
-              })}
+        <div className="flex flex-col justify-between  h-full max-h-[535px]">
+          <div className="meme-selector-container p-1">
+            <div className="bg-[#e4e4e4] overflow-auto">
+              <div className="meme-selector-bg grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center items-center py-8 px-6 lg:w-[517px] lg:h-[461px]">
+                {REPLY_GUY_ASSETS.map((item) => {
+                  const isSelected = selectedMeme.src === item.src;
+                  return (
+                    <div
+                      className={`border-4  relative cursor-pointer transition-200 ${
+                        isSelected ? "border-custom-blue-500" : "border-white"
+                      }`}
+                      key={item.src}
+                      onClick={() => setSelectedMeme(item)}
+                    >
+                      <Image
+                        src={`${process.env.CLOUDFLARE_STORAGE}/images/modals/downloads/${item.src}`}
+                        alt={item.src}
+                        width={110}
+                        height={110}
+                        className="object-cover aspect-square"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
+          <TextInput
+            handleInput={handleInput}
+            handleColorChange={handleColorChange}
+            handleFontSizeChange={handleFontSizeChange}
+          />
         </div>
         {/* image + actions */}
         <div className="flex flex-col lg:h-full justify-between">
-          <div className="col-centered w-[304px] md:w-[442px] lg:w-[461px] lg:h-[461px]">
+          {/*  max-w-[304px] md:max-w-[442px] */}
+          <div className="col-centered lg:w-[461px] lg:h-[461px]">
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/modals/downloads/${selectedMeme.src}`}
               alt={selectedMeme.downloadSrc}
               width={461}
               height={461}
-              className="meme-image-container w-full lg:w-auto max-w-[461px] lg:h-[461px] object-contain"
+              className="meme-image-container lg:w-auto w-auto lg:max-w-[461px] h-[300px] md:h-[369px] lg:h-[461px] object-contain"
             />
           </div>
         </div>
