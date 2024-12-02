@@ -11,7 +11,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   title: string;
   titleSrc: string;
 }
-const Modal: FC<Props> = (props: Props) => {
+const WideModal: FC<Props> = (props: Props) => {
   const { show, children, titleSrc, title, className, ...componentProps } =
     props;
 
@@ -24,39 +24,39 @@ const Modal: FC<Props> = (props: Props) => {
 
   useLockBodyScroll(show);
 
-  const scrollContent = (direction: "up" | "down") => {
-    const container = document.querySelector(".modal-content-container");
-    if (container) {
-      const scrollAmount = 50; // Adjust this value as needed
-      container.scrollBy({
-        top: direction === "up" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
+  // const scrollContent = (direction: "up" | "down") => {
+  //   const container = document.querySelector(".modal-content-container");
+  //   if (container) {
+  //     const scrollAmount = 50; // Adjust this value as needed
+  //     container.scrollBy({
+  //       top: direction === "up" ? -scrollAmount : scrollAmount,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
-  const handleMouseDown = (direction: "up" | "down") => {
-    scrollContent(direction); // Initial scroll
-    const interval = setInterval(() => scrollContent(direction), 100); // Adjust interval as needed
-    setScrollInterval(interval);
-  };
+  // const handleMouseDown = (direction: "up" | "down") => {
+  //   scrollContent(direction); // Initial scroll
+  //   const interval = setInterval(() => scrollContent(direction), 100); // Adjust interval as needed
+  //   setScrollInterval(interval);
+  // };
 
-  const handleMouseUp = () => {
-    if (scrollInterval) {
-      clearInterval(scrollInterval);
-      setScrollInterval(null);
-    }
-  };
+  // const handleMouseUp = () => {
+  //   if (scrollInterval) {
+  //     clearInterval(scrollInterval);
+  //     setScrollInterval(null);
+  //   }
+  // };
 
-  const handleScroll = () => {
-    const container = document.querySelector(".modal-content-container");
-    if (container) {
-      const scrollTop = container.scrollTop;
-      const scrollHeight = container.scrollHeight - container.clientHeight;
-      const scrollPercentage = scrollTop / scrollHeight;
-      setScrollbarPosition(scrollPercentage * 100);
-    }
-  };
+  // const handleScroll = () => {
+  //   const container = document.querySelector(".modal-content-container");
+  //   if (container) {
+  //     const scrollTop = container.scrollTop;
+  //     const scrollHeight = container.scrollHeight - container.clientHeight;
+  //     const scrollPercentage = scrollTop / scrollHeight;
+  //     setScrollbarPosition(scrollPercentage * 100);
+  //   }
+  // };
 
   return (
     <motion.div
@@ -71,9 +71,9 @@ const Modal: FC<Props> = (props: Props) => {
           ${className} ${
           maximize
             ? "modal-miximized"
-            : "h-[85svh] lg:h-[695px] w-[94vw] lg:w-[846px] "
+            : "h-[85svh] lg:h-[634px] w-[94vw] lg:!w-[1098px]"
           // ? "w-[99vw] top-1 bottom-[47px] left-1/2 transform -translate-x-1/2"
-          // : "h-[85svh] lg:h-[695px] w-[94vw] lg:w-[846px] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          // : "h-[85svh] lg:h-[634px] w-[94vw] lg:w-[1064px] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
         }`}
       >
         {/* blue header */}
@@ -114,28 +114,16 @@ const Modal: FC<Props> = (props: Props) => {
             />
           </div>
         </div>
-        {/* text file "buttons" */}
-        <div className="min-h-[42px] w-full flex items-center gap-5 text-custom-gray-900 text-sm px-3">
-          <p>File</p>
-          <p>Edit</p>
-          <p>View</p>
-          <p>Go</p>
-          <p>Favorites</p>
-          <p>Help</p>
-        </div>
         {/* body */}
         <div className="flex overflow-hidden w-full h-full">
           {/* content */}
-          <div className="model-content-container-outline pt-[5px] w-full h-full">
-            <div
-              className="modal-content-container justify-center w-full h-full"
-              onScroll={handleScroll}
-            >
-              <div className="min-h-[800px]">{children}</div>
+          <div className="base-gray-2 pt-[5px] w-full h-full">
+            <div className="wide-modal-content-container justify-center w-full h-full p-5">
+              {children}
             </div>
           </div>
           {/* scroll */}
-          <div className="relative flex flex-col items-center justify-between h-full ml-1">
+          {/* <div className="relative flex flex-col items-center justify-between h-full ml-1">
             <button
               onMouseDown={() => handleMouseDown("up")}
               onMouseUp={handleMouseUp}
@@ -162,11 +150,11 @@ const Modal: FC<Props> = (props: Props) => {
                 alt="down"
               />
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </motion.div>
   );
 };
 
-export default Modal;
+export default WideModal;

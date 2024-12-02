@@ -5,6 +5,6 @@ export interface Assets {
   height?: number;
   alt?: string;
 } 
-export interface DownloadableAssets extends Assets { 
+export interface DownloadableAsset extends Assets { 
   downloadSrc: string;
 }  

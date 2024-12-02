@@ -15,6 +15,7 @@ const ModalScrollBar = dynamic(() => import("./atoms/ModalScrollBar"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead")); 
 const Modal = dynamic(() => import("./molecules/Modal")); 
+const WideModal = dynamic(() => import("./molecules/WideModal")); 
 const SplashScreen = dynamic(() => import("./molecules/SplashScreen")); 
 const Clock = dynamic(() => import("./molecules/Clock")); 
 const DesktopIcon = dynamic(() => import("./molecules/DesktopIcon")); 
@@ -54,5 +55,6 @@ export {
   MemeGeneratorModal,
   TokenomicsModal,
   TrashModal,
-  ModalScrollBar
+  ModalScrollBar,
+  WideModal
 }

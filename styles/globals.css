@@ -224,3 +224,27 @@ footer {
     0.873px 0.873px 0px 0px #fff inset, -1.746px -1.746px 0px 0px #808080 inset,
     1.746px 1.746px 0px 0px #dfdfdf inset;
 }
+
+.wide-modal-content-container {
+  @apply flex mb-4 h-full flex-grow overflow-y-auto;
+}
+
+.modal-miximized {
+  @apply w-[99vw] h-[99svh] lg:h-[92svh];
+}
+
+.meme-selector-container {
+  background: #e4e4e4;
+  box-shadow: -2.105px -2.105px 0px 0px #fff inset,
+    2.105px 2.105px 0px 0px #0a0a0a inset,
+    -4.211px -4.211px 0px 0px #dfdfdf inset,
+    4.211px 4.211px 0px 0px #808080 inset;
+}
+
+.base-gray-2 {
+  background: var(--Window-Content-Base-Grey-2, #c0c0c0);
+}
+.meme-image-container {
+  background: lightgray 50% / cover no-repeat;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}

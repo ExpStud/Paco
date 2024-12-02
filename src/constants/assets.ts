@@ -1,6 +1,6 @@
-import { DownloadableAssets } from "@types";
+import { DownloadableAsset } from "@types";
 
-export const REPLY_GUY_ASSETS: DownloadableAssets[] = [
+export const REPLY_GUY_ASSETS: DownloadableAsset[] = [
   { 
     src: "1.jpg",
     downloadSrc: "1.jpg"
