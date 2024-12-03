@@ -76,7 +76,7 @@ const LandingView: FC<Props> = (props: Props) => {
 
       {/* paco */}
       <Image
-        src={`/images/desktop/rocheco@${isMobile ? "2" : "3"}x.png`}
+        src={`/images/desktop/rocheco.png`}
         alt="rocheco"
         width={623}
         height={528}
