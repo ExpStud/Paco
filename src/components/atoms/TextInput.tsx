@@ -36,7 +36,7 @@ const TextInput: FC<Props> = (props: Props) => {
   };
 
   return (
-    <div className="text-options-container py-0.5">
+    <div className="text-options-container">
       <div className=" relative flex w-[525px] h-[40px] divide-x-[1px] divide-[#C4C4C4]">
         <input
           className={`h-full w-full bg-transparent outline-none focus:outline-none active:outline-none text-xs pl-4 placeholder:text-[#808080] ${className} ${
@@ -52,7 +52,7 @@ const TextInput: FC<Props> = (props: Props) => {
           name={componentProps.name}
           required={componentProps.required}
         />
-        <div className="flex items-end px-3 py-2 gap-2">
+        <div className="flex items-end px-3 pb-1.5 gap-2">
           <FontSizeIcon
             size={10}
             handleClick={updateFontSize}
@@ -69,7 +69,7 @@ const TextInput: FC<Props> = (props: Props) => {
             selectedSize={selectedFontSize}
           />
         </div>
-        <div className="flex items-end px-3 py-2 gap-2">
+        <div className="flex items-end px-3 pb-1.5 gap-2">
           <ColorSelectIcon color="black" handleClick={handleColorChange} />
           <ColorSelectIcon color="white" handleClick={handleColorChange} />
         </div>

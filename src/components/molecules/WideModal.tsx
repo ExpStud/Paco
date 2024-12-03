@@ -71,7 +71,7 @@ const WideModal: FC<Props> = (props: Props) => {
           ${className} ${
           maximize
             ? "modal-miximized"
-            : "h-[85svh] lg:h-[634px] w-[94vw] lg:!w-[1098px]"
+            : "h-[85svh] lg:h-[634px] w-[94vw] lg:w-screen 1098:!w-[1098px]"
           // ? "w-[99vw] top-1 bottom-[47px] left-1/2 transform -translate-x-1/2"
           // : "h-[85svh] lg:h-[634px] w-[94vw] lg:w-[1064px] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
         }`}

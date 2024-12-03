@@ -1,8 +1,15 @@
 import { FC, useState } from "react";
-import { TextInput, WideModal } from "@components";
+import {
+  DownloadButton,
+  ResetButton,
+  ShareButton,
+  TextInput,
+  WideModal,
+} from "@components";
 import { REPLY_GUY_ASSETS } from "@constants";
 import Image from "next/image";
 import { DownloadableAsset } from "src/types";
+import Draggable from "react-draggable";
 
 interface Props {
   show: boolean;
@@ -37,6 +44,10 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
     );
   };
 
+  const download = () => {};
+  const reset = () => {};
+  const share = () => {};
+
   return (
     <WideModal
       show={show}
@@ -49,7 +60,7 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
         <div className="flex flex-col justify-between  h-full max-h-[535px]">
           <div className="meme-selector-container p-1">
             <div className="bg-[#e4e4e4] overflow-auto">
-              <div className="meme-selector-bg grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center items-center py-8 px-6 lg:w-[517px] lg:h-[461px]">
+              <div className="meme-selector-bg grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center items-center py-8 px-6 lg:w-[517px] lg:h-[453px]">
                 {REPLY_GUY_ASSETS.map((item) => {
                   const isSelected = selectedMeme.src === item.src;
                   return (
@@ -91,12 +102,19 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
                 height={461}
                 className="meme-image-container lg:w-auto w-auto lg:max-w-[461px] h-[300px] md:h-[369px] lg:h-[461px] object-contain"
               />
-              <div
-                className={`absolute top-10 right-10 cursor-pointer ${color} ${fontSize}`}
-              >
-                {text}
-              </div>
+              <Draggable bounds="parent">
+                <div
+                  className={`absolute top-10 right-10 cursor-pointer ${color} ${fontSize}`}
+                >
+                  {text}
+                </div>
+              </Draggable>
             </div>
+          </div>
+          <div className="flex justify-between items-end w-full gap-4">
+            <DownloadButton onClick={download} />
+            <ResetButton onClick={reset} />
+            <ShareButton onClick={share} />
           </div>
         </div>
       </div>

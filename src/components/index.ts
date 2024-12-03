@@ -15,6 +15,9 @@ const ColorSelectIcon = dynamic(() => import("./@icons/ColorSelectIcon"));
 const Logo = dynamic(() => import("./atoms/Logo"));
 const ModalScrollBar = dynamic(() => import("./atoms/ModalScrollBar"));
 const TextInput = dynamic(() => import("./atoms/TextInput"));
+const DownloadButton = dynamic(() => import("./atoms/DownloadButton"));
+const ResetButton = dynamic(() => import("./atoms/ResetButton"));
+const ShareButton = dynamic(() => import("./atoms/ShareButton"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead")); 
 const Modal = dynamic(() => import("./molecules/Modal")); 
@@ -62,5 +65,8 @@ export {
   WideModal,
   TextInput,
   FontSizeIcon,
-  ColorSelectIcon
+  ColorSelectIcon,
+  DownloadButton,
+  ResetButton,
+  ShareButton
 }
