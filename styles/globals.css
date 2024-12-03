@@ -215,7 +215,7 @@ footer {
     4.211px 4.211px 0px 0px #808080 inset;
 }
 .modal-content-container::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Opera */
+  /*display: none; For Chrome, Safari, and Opera */
 }
 
 .asset-container {
@@ -260,4 +260,8 @@ footer {
     1.358px 1.358px 0px 0px #0a0a0a inset,
     -2.716px -2.716px 0px 0px #dfdfdf inset,
     2.716px 2.716px 0px 0px #808080 inset;
+}
+
+.modal-scrollbar-container {
+  @apply relative h-full flex-grow;
 }

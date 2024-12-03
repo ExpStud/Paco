@@ -4,6 +4,7 @@ import { scaleExitAnimation } from "@constants";
 import Image from "next/image";
 import { useLockBodyScroll } from "src/hooks";
 import { ModalScrollBar } from "@components";
+import Draggable from "react-draggable";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   show: boolean;
@@ -26,6 +27,7 @@ const Modal: FC<Props> = (props: Props) => {
 
   const scrollContent = (direction: "up" | "down") => {
     const container = document.querySelector(".modal-content-container");
+
     if (container) {
       const scrollAmount = 50; // Adjust this value as needed
       container.scrollBy({
@@ -50,11 +52,56 @@ const Modal: FC<Props> = (props: Props) => {
 
   const handleScroll = () => {
     const container = document.querySelector(".modal-content-container");
+    const scrollbar = document.querySelector(".modal-scrollbar-container");
+
+    // if (container && scrollbar) {
+    //   const scrollToolHeight = 407;
+    //   // Get the current scroll position from the top of the container
+    //   const scrollTop = container.scrollTop;
+    //   console.log("1. scrollTop", scrollTop);
+
+    //   // Calculate the total scrollable height of the container
+    //   const scrollHeight = container.scrollHeight - container.clientHeight;
+    //   console.log("2. scrollHeight", scrollHeight);
+
+    //   // Get the height of the scrollbar
+    //   const scrollbarHeight = scrollbar.clientHeight;
+    //   console.log("3. scrollbarHeight", scrollbarHeight);
+
+    //   // Get the height of the container
+    //   const containerHeight = container.clientHeight;
+    //   console.log("4. containerHeight", containerHeight);
+
+    //   //--
+
+    //   // Calculate the maximum scrollable top position, adjusting for the scrollbar height
+    //   const maxScrollTop = scrollbarHeight - scrollToolHeight; //scrollHeight - (scrollbarHeight - containerHeight);
+    //   console.log(
+    //     "5.  ----->  maxScrollTop",
+    //     maxScrollTop,
+    //     scrollbarHeight - containerHeight
+    //   );
+
+    //   // Calculate the scroll percentage based on the current scroll position and the maximum scrollable top position
+    //   const scrollPercentage = scrollTop / maxScrollTop;
+    //   console.log("6. scrollPercentage", scrollPercentage);
+
+    //   // Set the scrollbar position based on the calculated scroll percentage
+    //   setScrollbarPosition(scrollPercentage * 100);
+    // }
     if (container) {
       const scrollTop = container.scrollTop;
       const scrollHeight = container.scrollHeight - container.clientHeight;
       const scrollPercentage = scrollTop / scrollHeight;
       setScrollbarPosition(scrollPercentage * 100);
+    }
+  };
+  const handleDrag = (position: number) => {
+    const container = document.querySelector(".modal-content-container");
+    if (container) {
+      const scrollHeight = container.scrollHeight - container.clientHeight;
+      const newScrollTop = (position / 100) * scrollHeight;
+      container.scrollTop = newScrollTop;
     }
   };
 
@@ -65,6 +112,7 @@ const Modal: FC<Props> = (props: Props) => {
       onClick={componentProps.onClick}
       {...scaleExitAnimation}
     >
+      {/* <Draggable bounds="parent"> */}
       <div
         onClick={(e) => e.stopPropagation()}
         className={`modal-container left-1/2 top-1/2 lg:top-[48%] transform -translate-x-1/2 -translate-y-1/2 
@@ -77,7 +125,7 @@ const Modal: FC<Props> = (props: Props) => {
         }`}
       >
         {/* blue header */}
-        <div className="bg-custom-blue-500 w-full min-h-[42px] flex justify-between p-1 ">
+        <div className="bg-custom-blue-500 w-full min-h-[42px] flex justify-between p-1 cursor-pointer">
           <div className="row-centered gap-1.5 ml-0.5">
             <Image
               src={`/images/desktop/${titleSrc}`}
@@ -135,11 +183,12 @@ const Modal: FC<Props> = (props: Props) => {
             </div>
           </div>
           {/* scroll */}
-          <div className="relative flex flex-col items-center justify-between h-full ml-1">
+          {/* <div className="relative flex flex-col items-center justify-between h-full ml-1">
             <button
               onMouseDown={() => handleMouseDown("up")}
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}
+              className="z-10"
             >
               <Image
                 src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/scroll-up.svg`}
@@ -149,11 +198,12 @@ const Modal: FC<Props> = (props: Props) => {
               />
             </button>
 
-            <ModalScrollBar position={scrollbarPosition} />
-            <button
+            <ModalScrollBar position={scrollbarPosition} onDrag={handleDrag} />
+             <button
               onMouseDown={() => handleMouseDown("down")}
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}
+              className="z-10"
             >
               <Image
                 src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/scroll-down.svg`}
@@ -161,10 +211,11 @@ const Modal: FC<Props> = (props: Props) => {
                 height={36}
                 alt="down"
               />
-            </button>
-          </div>
+            </button> *
+          </div> */}
         </div>
       </div>
+      {/* </Draggable> */}
     </motion.div>
   );
 };

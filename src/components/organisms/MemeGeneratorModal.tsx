@@ -28,6 +28,7 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
   const [fontSize, setFontSize] = useState<
     "text-[10px]" | "text-[14px]" | "text-[18px]"
   >("text-[14px]");
+  const [resetInput, setResetInput] = useState<boolean>(false);
 
   const memeRef = useRef<HTMLDivElement>(null);
 
@@ -68,6 +69,7 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
     setText("");
     setColor("text-black");
     setFontSize("text-[14px]");
+    setResetInput(true);
   };
   const share = () => {};
 
@@ -76,12 +78,11 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
     reset();
   }, [selectedMeme]);
 
-  // useEffect(() => {
-  //   // This effect will run whenever selectedMeme changes
-  //   if (memeRef.current) {
-  //     memeRef.current.innerHTML = ""; // Clear the current content
-  //   }
-  // }, [selectedMeme]);
+  useEffect(() => {
+    if (resetInput) {
+      setResetInput(false); // Reset the state after notifying TextInput
+    }
+  }, [resetInput]);
 
   return (
     <WideModal
@@ -123,7 +124,7 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
             handleInput={handleInput}
             handleColorChange={handleColorChange}
             handleFontSizeChange={handleFontSizeChange}
-            resetInput={false}
+            resetInput={resetInput}
           />
         </div>
         {/* image + actions */}
