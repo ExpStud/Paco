@@ -5,6 +5,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   handleInput: (value: string) => void;
   handleFontSizeChange: (value: number) => void;
   handleColorChange: (value: string) => void;
+  resetInput?: boolean;
   error?: boolean;
 }
 
@@ -15,6 +16,7 @@ const TextInput: FC<Props> = (props: Props) => {
     handleFontSizeChange,
     handleColorChange,
     className,
+    resetInput,
     ...componentProps
   } = props;
 

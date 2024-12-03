@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, use, useEffect, useRef, useState } from "react";
 import {
   DownloadButton,
   ResetButton,
@@ -10,6 +10,7 @@ import { REPLY_GUY_ASSETS } from "@constants";
 import Image from "next/image";
 import { DownloadableAsset } from "src/types";
 import Draggable from "react-draggable";
+import html2canvas from "html2canvas";
 
 interface Props {
   show: boolean;
@@ -28,6 +29,8 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
     "text-[10px]" | "text-[14px]" | "text-[18px]"
   >("text-[14px]");
 
+  const memeRef = useRef<HTMLDivElement>(null);
+
   const handleInput = (value: string) => {
     setText(value);
   };
@@ -44,9 +47,41 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
     );
   };
 
-  const download = () => {};
-  const reset = () => {};
+  const download = () => {
+    if (memeRef.current === null) {
+      return;
+    }
+
+    html2canvas(memeRef.current)
+      .then((canvas) => {
+        const dataUrl = canvas.toDataURL("image/png");
+        const link = document.createElement("a");
+        link.href = dataUrl;
+        link.download = "meme.png";
+        link.click();
+      })
+      .catch((err) => {
+        console.error("Failed to generate image", err);
+      });
+  };
+  const reset = () => {
+    setText("");
+    setColor("text-black");
+    setFontSize("text-[14px]");
+  };
   const share = () => {};
+
+  //reset data and input when meme changes
+  useEffect(() => {
+    reset();
+  }, [selectedMeme]);
+
+  // useEffect(() => {
+  //   // This effect will run whenever selectedMeme changes
+  //   if (memeRef.current) {
+  //     memeRef.current.innerHTML = ""; // Clear the current content
+  //   }
+  // }, [selectedMeme]);
 
   return (
     <WideModal
@@ -88,14 +123,15 @@ const MemeGeneratorModal: FC<Props> = (props: Props) => {
             handleInput={handleInput}
             handleColorChange={handleColorChange}
             handleFontSizeChange={handleFontSizeChange}
+            resetInput={false}
           />
         </div>
         {/* image + actions */}
         <div className="flex flex-col lg:h-full justify-between">
-          {/*  max-w-[304px] md:max-w-[442px] */}
           <div className="col-centered lg:w-[461px] lg:h-[461px] relative">
-            <div className="relative">
+            <div className="relative" ref={memeRef}>
               <Image
+                key={selectedMeme.src}
                 src={`${process.env.CLOUDFLARE_STORAGE}/images/modals/downloads/${selectedMeme.src}`}
                 alt={selectedMeme.downloadSrc}
                 width={461}
