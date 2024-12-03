@@ -61,7 +61,7 @@ const LandingView: FC<Props> = (props: Props) => {
         className="top-[52vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-4"
         highlight={showTokenomicsModal}
       />
-      <DesktopIcon
+      {/* <DesktopIcon
         icon="trash"
         name="Trasssshhh"
         onDoubleClick={() => {
@@ -72,7 +72,7 @@ const LandingView: FC<Props> = (props: Props) => {
         }}
         className="top-[82vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-4"
         highlight={showTrashModal}
-      />
+      /> */}
 
       {/* paco */}
       <Image
