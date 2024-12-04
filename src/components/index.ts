@@ -1,4 +1,4 @@
-import dynamic from "next/dynamic";
+import dynamic from "next/dynamic"; 
 
 //icons
 const ArrowIcon = dynamic(() => import("./@icons/ArrowIcon"));
@@ -18,6 +18,9 @@ const TextInput = dynamic(() => import("./atoms/TextInput"));
 const DownloadButton = dynamic(() => import("./atoms/DownloadButton"));
 const ResetButton = dynamic(() => import("./atoms/ResetButton"));
 const ShareButton = dynamic(() => import("./atoms/ShareButton"));
+const OutlookButton = dynamic(() => import("./atoms/OutlookButton"));
+const BuySolanaButton = dynamic(() => import("./atoms/BuySolanaButton"));
+const XxxButton = dynamic(() => import("./atoms/XxxButton"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead")); 
 const Modal = dynamic(() => import("./molecules/Modal")); 
@@ -68,5 +71,8 @@ export {
   ColorSelectIcon,
   DownloadButton,
   ResetButton,
-  ShareButton
+  ShareButton,
+  OutlookButton,
+  BuySolanaButton,
+  XxxButton,
 }

@@ -1,10 +1,20 @@
 import { motion } from "framer-motion";
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { enterAnimation } from "@constants";
 import Image from "next/image";
-import { Clock } from "@components";
+import { Clock, BuySolanaButton, OutlookButton, XxxButton } from "@components";
 
 const Footer: FC = () => {
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    } else {
+      console.error("Audio element not found");
+    }
+  };
+
   return (
     <motion.footer
       className=" min-h-[44px] w-full flex items-center justify-between py-1 lg:py-1.5"
@@ -62,32 +72,25 @@ const Footer: FC = () => {
           <FooterDividerTwo />
         </div>
         <div className="hidden md:flex gap-[3px] mx-2 ">
-          <a href="https://jup.ag/" target="_blank" rel="noreferrer">
-            <Image
-              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/xxx.svg`}
-              alt="xxx"
-              width={243}
-              height={35}
-            />
-          </a>
-
-          <a href="https://jup.ag/" target="_blank" rel="noreferrer">
-            <Image
-              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/outlook-lg.svg`}
-              alt="outlook-lg"
-              width={243}
-              height={35}
-            />
-          </a>
-          <a href="https://jup.ag/" target="_blank" rel="noreferrer">
-            <Image
-              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/buy-solana.svg`}
-              alt="buy solana"
-              width={243}
-              height={35}
-              className="hidden lg:block"
-            />
-          </a>
+          <XxxButton
+            onClick={() =>
+              window.open(
+                "https://read.dukeupress.edu/environmental-humanities/article/14/3/661/319761/Theorizing-the-Gay-Frog",
+                "_blank"
+              )
+            }
+          />
+          <OutlookButton
+            onClick={() =>
+              window.open(
+                "https://www.reddit.com/r/solana/comments/1h0kluf/stop_gambling_your_money_on_this_meme_shits/?rdt=62662",
+                "_blank"
+              )
+            }
+          />
+          <BuySolanaButton
+            onClick={() => window.open("https://ftx.com/", "_blank")}
+          />
         </div>
       </div>
       <div className="flex items-center self-start h-full mr-1">
@@ -97,12 +100,18 @@ const Footer: FC = () => {
         </div>
         <div className="footer-time">
           <div className="flex gap-1">
+            {/* Hidden audio element */}
+            <audio
+              ref={audioRef}
+              src={`${process.env.CLOUDFLARE_STORAGE}/audio/hooyahh.mp3`}
+            />
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/time.png`}
               alt="time"
               width={25}
               height={25}
-              className="cursor-pointer"
+              // className="cursor-pointer"
+              // onClick={playAudio}
             />
             <Image
               src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/speaker.png`}
@@ -110,6 +119,7 @@ const Footer: FC = () => {
               width={25}
               height={25}
               className="cursor-pointer"
+              onClick={playAudio}
             />
           </div>
           <Clock />

@@ -3,22 +3,10 @@ import React, { HTMLAttributes, useState } from "react";
 interface Props extends HTMLAttributes<HTMLButtonElement> {}
 const DownloadButton: React.FC<Props> = (props: Props) => {
   const { className, ...componentProps } = props;
-  const [isPressed, setIsPressed] = useState(false);
-
-  const handleMouseDown = () => {
-    setIsPressed(true);
-  };
-
-  const handleMouseUp = () => {
-    setIsPressed(false);
-  };
 
   return (
     <button
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}
-      className={`download-button ${isPressed ? "pressed" : ""}`}
+      className={`group`}
       style={{
         border: "none",
         background: "none",
@@ -38,7 +26,8 @@ const DownloadButton: React.FC<Props> = (props: Props) => {
           <rect
             width="144"
             height="40"
-            fill={isPressed ? "#A0A0A0" : "#C0C0C0"}
+            fill={"#C0C0C0"}
+            className="analog-button"
           />
           <path
             fillRule="evenodd"

@@ -265,3 +265,7 @@ footer {
 .modal-scrollbar-container {
   @apply relative h-full flex-grow;
 }
+
+.analog-button {
+  @apply group-hover:fill-[#b3b3b3] group-active:fill-[#A0A0A0];
+}

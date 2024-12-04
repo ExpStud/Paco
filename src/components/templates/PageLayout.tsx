@@ -9,7 +9,7 @@ import {
   TokenomicsModal,
   TrashModal,
 } from "@components";
-import { enterAnimation } from "@constants";
+import { enterAnimation, fastEnterAnimation } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { ViewContext } from "@contexts";
 
@@ -56,7 +56,7 @@ const PageLayout: FC<Props> = (props: Props) => {
         {/* body */}
         <motion.main
           className="max-width flex flex-col flex-grow w-full overflow-x-hidden"
-          {...enterAnimation}
+          {...fastEnterAnimation}
         >
           {children}
         </motion.main>
