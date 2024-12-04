@@ -35,38 +35,30 @@ const Footer: FC = () => {
           <FooterDividerOne className="mx-1.5" />
           <FooterDividerTwo />
           <div className="flex gap-2 mx-2">
-            <a href="https://jup.ag/" target="_blank" rel="noreferrer">
-              <Image
-                src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/pencil.png`}
-                alt="pencil"
-                width={25}
-                height={25}
-              />
-            </a>
-            <a href="https://jup.ag/" target="_blank" rel="noreferrer">
-              <Image
-                src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/file.png`}
-                alt="file"
-                width={25}
-                height={25}
-              />
-            </a>
-            <a href="https://jup.ag/" target="_blank" rel="noreferrer">
-              <Image
-                src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/outlook.png`}
-                alt="outlook"
-                width={25}
-                height={25}
-              />
-            </a>
-            <a href="https://jup.ag/" target="_blank" rel="noreferrer">
-              <Image
-                src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/explorer.png`}
-                alt="explorer"
-                width={25}
-                height={25}
-              />
-            </a>
+            <Image
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/pencil.png`}
+              alt="pencil"
+              width={25}
+              height={25}
+            />
+            <Image
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/file.png`}
+              alt="file"
+              width={25}
+              height={25}
+            />
+            <Image
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/outlook.png`}
+              alt="outlook"
+              width={25}
+              height={25}
+            />
+            <Image
+              src={`${process.env.CLOUDFLARE_STORAGE}/images/buttons/explorer.png`}
+              alt="explorer"
+              width={25}
+              height={25}
+            />
           </div>
           <FooterDividerOne className="mr-1.5" />
           <FooterDividerTwo />
@@ -79,6 +71,7 @@ const Footer: FC = () => {
                 "_blank"
               )
             }
+            className="hidden xl:flex"
           />
           <OutlookButton
             onClick={() =>
@@ -90,6 +83,7 @@ const Footer: FC = () => {
           />
           <BuySolanaButton
             onClick={() => window.open("https://ftx.com/", "_blank")}
+            className="hidden lg:flex"
           />
         </div>
       </div>

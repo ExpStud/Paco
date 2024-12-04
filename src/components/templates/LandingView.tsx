@@ -34,7 +34,7 @@ const LandingView: FC<Props> = (props: Props) => {
         onClick={() => {
           if (isMobile) setShowReplyGuyModal(true);
         }}
-        className="top-[20vh] right-[8vw] md:right-[6vw] 1420:right-0 "
+        className="top-[20vh] right-[2vw] md:right-[6vw] 1420:right-0 "
         highlight={showReplyGuyModal}
       />
       <DesktopIcon
@@ -46,7 +46,7 @@ const LandingView: FC<Props> = (props: Props) => {
         onClick={() => {
           if (isMobile) setShowMemeGeneratorModal(true);
         }}
-        className="top-[36vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-1"
+        className="top-[36vh] right-[2vw] md:right-[6vw] 1420:right-0 mr-1"
         highlight={showMemeGeneratorModal}
       />
       <DesktopIcon
@@ -58,7 +58,7 @@ const LandingView: FC<Props> = (props: Props) => {
         onClick={() => {
           if (isMobile) setShowTokenomicsModal(true);
         }}
-        className="top-[52vh] right-[8vw] md:right-[6vw] 1420:right-0 mr-4"
+        className="top-[60vh] md:top-[52vh] right-[2vw] md:right-[6vw] 1420:right-0 mr-4"
         highlight={showTokenomicsModal}
       />
       {/* <DesktopIcon

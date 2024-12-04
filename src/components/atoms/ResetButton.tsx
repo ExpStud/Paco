@@ -6,7 +6,7 @@ const ResetButton: React.FC<Props> = (props: Props) => {
 
   return (
     <button
-      className={`group`}
+      className={`group ${className ?? ""}`}
       style={{
         border: "none",
         background: "none",

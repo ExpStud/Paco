@@ -13,7 +13,7 @@ const XxxButton: React.FC<Props> = (props: Props) => {
         cursor: "pointer",
       }}
       {...componentProps}
-      className="group"
+      className={`group ${className ?? ""}`}
     >
       <svg
         width="244"
