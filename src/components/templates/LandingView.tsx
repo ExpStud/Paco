@@ -37,7 +37,7 @@ const LandingView: FC<Props> = (props: Props) => {
         className="top-[20vh] right-[2vw] md:right-[6vw] 1420:right-0 "
         highlight={showReplyGuyModal}
       />
-      <DesktopIcon
+      {/* <DesktopIcon
         icon="meme-generator"
         name="Meme Generator"
         onDoubleClick={() => {
@@ -48,7 +48,7 @@ const LandingView: FC<Props> = (props: Props) => {
         }}
         className="top-[36vh] right-[2vw] md:right-[6vw] 1420:right-0 mr-1"
         highlight={showMemeGeneratorModal}
-      />
+      /> */}
       <DesktopIcon
         icon="tokenomics"
         name="Tokenomics"
