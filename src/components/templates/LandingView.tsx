@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, FC, useContext } from "react";
+import { Dispatch, SetStateAction, FC, useContext, useState } from "react";
 import { handleAssetLoad } from "@utils";
 import Image from "next/image";
 import { isMobile } from "react-device-detect";
@@ -21,6 +21,22 @@ const LandingView: FC<Props> = (props: Props) => {
     setShowTokenomicsModal,
     setShowTrashModal,
   } = useContext(ViewContext);
+
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyToClipboard = () => {
+    const textToCopy = "Your text to copy"; // Replace with the text you want to copy
+    navigator.clipboard.writeText(textToCopy).then(
+      () => {
+        console.log("Text copied to clipboard");
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 2000); // Hide the checkmark after 2 seconds
+      },
+      (err) => {
+        console.error("Failed to copy text: ", err);
+      }
+    );
+  };
 
   return (
     <div className="w-full h-full relative">
@@ -84,20 +100,30 @@ const LandingView: FC<Props> = (props: Props) => {
         onLoad={() => handleAssetLoad(0, setAssets)}
       />
       {/* post it */}
-      <div className="absolute bottom-0 xs:bottom-24 xl:bottom-1/4 left-2 xs:left-14 xl:left-0 flex flex-col items-end scale-75 xs:scale-100 cursor-pointer transition-300">
+      <div
+        className="absolute bottom-0 xs:bottom-24 xl:bottom-1/4 left-2 xs:left-14 xl:left-0 flex flex-col items-end scale-75 xs:scale-100 cursor-pointer transition-300"
+        onClick={copyToClipboard}
+      >
         <Image
           src={`/images/desktop/post-it-note.svg`}
           alt="post it note"
           width={147}
           height={164}
         />
-        <Image
-          src={`/images/desktop/click-to-copy.svg`}
-          alt="click to copy"
-          width={106}
-          height={20}
-          className="-mt-4"
-        />
+        <div className="relative">
+          <Image
+            src={`/images/desktop/click-to-copy.svg`}
+            alt="click to copy"
+            width={106}
+            height={20}
+            className="-mt-4"
+          />
+          {isCopied && (
+            <span className="text-green-500 text-2xl absolute -right-8 bottom-0">
+              ✅
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

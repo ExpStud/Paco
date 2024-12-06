@@ -5,12 +5,12 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "res.cloudinary.com",
+        hostname: "images.urfrenpaco.com",
       },
     ],
   },
   env: {
-    CLOUDFLARE_STORAGE: "",
+    CLOUDFLARE_STORAGE: "", //"https://images.urfrenpaco.com",
   },
 };
 
